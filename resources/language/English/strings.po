@@ -1,0 +1,61 @@
+# script.shutdown.timer language file
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+#: SETTINGS
+msgctxt "#32000"
+msgid "Action to execute"
+msgstr ""
+
+#: SETTINGS
+msgctxt "#32010"
+msgid "Suspend"
+msgstr ""
+
+#: SETTINGS
+msgctxt "#32011"
+msgid "ShutDown"
+msgstr ""
+
+#: SETTINGS
+msgctxt "#32012"
+msgid "Quit"
+msgstr ""
+
+#: GUI
+msgctxt "#32100"
+msgid "Timer"
+msgstr ""
+
+#: GUI
+msgctxt "#32101"
+msgid "Disabled"
+msgstr ""
+
+#: GUI
+msgctxt "#32102"
+msgid "seconds"
+msgstr ""
+
+#: GUI
+msgctxt "#32103"
+msgid "Shutdown after"
+msgstr ""
+
+#: GUI
+msgctxt "#32104"
+msgid "minutes"
+msgstr ""
+
+#: GUI
+msgctxt "#32105"
+msgid "Shutdown"
+msgstr ""
+
+#: GUI
+msgctxt "#32106"
+msgid "Left to shutdown"
+msgstr ""

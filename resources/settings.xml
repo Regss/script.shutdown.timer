@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="32000" type="enum" id="action" lvalues="32010|32011|32012" default="0" />
+</settings>

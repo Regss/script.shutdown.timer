@@ -1,0 +1,61 @@
+# script.shutdown.timer language file
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+
+#: SETTINGS
+msgctxt "#32000"
+msgid "Action to execute"
+msgstr "Akcja do wykonania"
+
+#: SETTINGS
+msgctxt "#32010"
+msgid "Suspend"
+msgstr "Uśpij"
+
+#: SETTINGS
+msgctxt "#32011"
+msgid "ShutDown"
+msgstr "Wyłącz"
+
+#: SETTINGS
+msgctxt "#32012"
+msgid "Quit"
+msgstr "Zamknij"
+
+#: GUI
+msgctxt "#32100"
+msgid "Timer"
+msgstr "Wyłącznik czasowy"
+
+#: GUI
+msgctxt "#32101"
+msgid "Disabled"
+msgstr "Wyłączony"
+
+#: GUI
+msgctxt "#32102"
+msgid "seconds"
+msgstr "sekund"
+
+#: GUI
+msgctxt "#32103"
+msgid "Shutdown after"
+msgstr "Wyłącznienie za"
+
+#: GUI
+msgctxt "#32104"
+msgid "minutes"
+msgstr "minut"
+
+#: GUI
+msgctxt "#32105"
+msgid "Shutdown"
+msgstr "Wyłączanie"
+
+#: GUI
+msgctxt "#32106"
+msgid "Left to shutdown"
+msgstr "Pozostało do wyłączenia"
