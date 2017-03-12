@@ -10,9 +10,10 @@ ADDON               = xbmcaddon.Addon()
 ADDON_ID            = ADDON.getAddonInfo('id')
 ADDON_NAME          = ADDON.getAddonInfo('name')
 ADDON_ICON          = ADDON.getAddonInfo('icon')
+ADDON_PATH          = xbmc.translatePath(ADDON.getAddonInfo('path'))
 ADDON_LANG          = ADDON.getLocalizedString
 
-timers = [0, 15, 30, 60, 90, 120]
+timers = [15, 30, 60, 90, 120]
 
 class Timer:
     
@@ -45,7 +46,7 @@ class Timer:
             return
         
         xbmcgui.Window(10000).setProperty(ADDON_ID + '_switch', now.strftime('%d-%m-%Y %H:%M:%S'))
-        timers = [1, 15, 30, 60, 90, 120]
+        
         for t in range(len(timers)):
             if timer is None or (now + timedelta(minutes = timers[t]) - timedelta(seconds = 5) > timer):
                 xbmcgui.Window(10000).setProperty(ADDON_ID + '_timer', (now + timedelta(minutes = timers[t])).strftime('%d-%m-%Y %H:%M:%S'))
@@ -64,10 +65,22 @@ class Timer:
         timer_str = format(hours, '02') + ':' + format(mins, '02') + ':' + format(secs, '02')
         return timer_str
     
-    def notify(self, msg, title=''):
-        xbmc.executebuiltin('Notification(' + ADDON_NAME + ', ' + msg.encode('utf-8') + ', 5000, ' + ADDON_ICON + ')')
+    def notify(self, msg, title=ADDON_NAME):
+        display = SHOW('script-shutdown.timer-notify.xml', ADDON_PATH, label_title=title, label_text=msg.encode('utf-8'))
+        display.doModal()
+        del display
+        
+class SHOW(xbmcgui.WindowXMLDialog):
     
-    def debug(self, msg):
-        xbmc.log('..:: ' + ADDON_NAME + ' ::.. ' + msg)
-
+    def __init__(self, xmlFile, resourcePath, label_title, label_text):
+        
+        self.label_title = label_title
+        self.label_text = label_text
+        
+    def onInit(self):
+        self.getControl(10080).setLabel(self.label_title)
+        self.getControl(10081).setLabel(self.label_text)
+        xbmc.sleep(2000)
+        self.close()
+        
 Timer()

@@ -4,6 +4,7 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 import time
+import json
 from datetime import datetime, timedelta
 
 ADDON               = xbmcaddon.Addon()
@@ -56,8 +57,17 @@ def checkTimer():
 def resetTimer():
     xbmcgui.Window(10000).clearProperty(ADDON_ID + '_timer')
 
-resetTimer()
-    
+class Monitor(xbmc.Monitor):
+    def __init__(self):
+        resetTimer()
+            
+    def onNotification(self, sender, method, data):
+        data = json.loads(data)
+        if 'System.OnWake' in method:
+            resetTimer()
+            
+monitor = Monitor()
+
 while(not xbmc.abortRequested):
     checkTimer()
     xbmc.sleep(1000)
